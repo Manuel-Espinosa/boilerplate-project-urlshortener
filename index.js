@@ -8,7 +8,7 @@ const router = require('./router')
 const port = process.env.PORT || 3000;
 
 app.use(cors());
-
+app.use(express.urlencoded({ extended: true }));
 app.use(router)
 
 app.use('/public', express.static(`${process.cwd()}/public`));
